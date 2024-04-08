@@ -15,11 +15,11 @@ int main(){
                         cleanup();
                         exit(0);
                 } else {
-                        char to_render[3] = {(char)num + '0', key, '\0'}; // Create a character array with the character returned by get_key_down
+                        char to_render[4] = {(char)num + '0', '\n',  key, '\0'}; // Create a character array with the character returned by get_key_down
                         render(to_render); // Pass the character array to render
                         
                 	num++;
-			sleep(0.1);
+			
 		}
 	}
 }
