@@ -7,6 +7,7 @@ void init(){
     	raw();
     	noecho();
     	keypad(stdscr, TRUE);
+	halfdelay(1);
 
 }
 void cleanup() {
@@ -21,5 +22,7 @@ void render(char to_render[]){
 	mvprintw(0, 0, to_render);
 	refresh();
 }
+
+void set_key_down_timeout(int tenths){halfdelay(tenths);}
 
 
