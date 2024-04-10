@@ -9,7 +9,7 @@
 int main(){
 	init();
 	char num = 0;
-	set_key_down_timeout(100, stdscr);
+	set_key_down_timeout(1, stdscr);
 	while(TRUE){
 		char key = get_key_down();
 		if(key == 'q'){
