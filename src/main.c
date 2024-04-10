@@ -9,17 +9,23 @@
 int main(){
 	init();
 	char num = 0;
+	set_key_down_timeout(100, stdscr);
 	while(TRUE){
 		char key = get_key_down();
-                if(key == 'q'){
+		if(key == 'q'){
                         cleanup();
                         exit(0);
                 } else {
-                        char to_render[3] = {(char)num + '0', key, '\0'}; // Create a character array with the character returned by get_key_down
-                        render(to_render); // Pass the character array to render
-                        
+			if(key != (char) -1){
+                        	char to_render[4] = {(char)num + '0', '\n',  key, '\0'};
+                        	render(to_render);
+			}
+			else{
+				char to_render[3] = {(char)num+0,'\n','\0'};
+				render(to_render);
+			}
                 	num++;
-			sleep(0.1);
+			
 		}
 	}
 }
